@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>argument replay</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="replay-page" aria-labelledby="page-title">
+      <section class="intro">
+        <div class="brand" aria-label="argument replay">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>argument replay</span>
+        </div>
+
+        <h1 id="page-title">argument replay</h1>
+        <p class="lede">detect group chat beef and replay it like a dramatic timeline</p>
+      </section>
+
+      <section class="panel setup-panel" id="setup-panel">
+        <form class="setup-form" id="setup-form">
+          <label>
+            <span>WhatsApp export</span>
+            <input id="chat-file" type="file" accept=".txt,text/plain" required />
+          </label>
+          <p class="status" id="parse-status">No chat loaded yet.</p>
+          <button class="button button-light" type="submit">Find Arguments</button>
+        </form>
+      </section>
+
+      <section class="panel list-panel" id="list-panel" hidden>
+        <div class="panel-heading">
+          <p class="tools-kicker">detected incidents</p>
+          <h2>choose the drama</h2>
+        </div>
+        <div class="argument-list" id="argument-list"></div>
+      </section>
+
+      <section class="panel replay-panel" id="replay-panel" hidden>
+        <div class="replay-topline">
+          <span id="replay-title">argument</span>
+          <span id="replay-meta">0 messages</span>
+        </div>
+
+        <div class="drama-meter" aria-label="Drama score">
+          <span id="drama-fill"></span>
+        </div>
+
+        <div class="timeline" id="timeline"></div>
+
+        <div class="actions">
+          <button class="button button-dark" id="back-to-list" type="button">Back</button>
+          <button class="button button-light" id="play-replay" type="button">Play Replay</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
